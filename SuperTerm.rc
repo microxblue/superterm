@@ -1,0 +1,543 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\SuperTerm.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\SuperTerm.ico"
+
+IDR_LED_OFF             ICON                    "res\\idr_led_off.ico"
+
+IDR_LED_ON              ICON                    "res\\idr_led.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+IDB_TOOLBAR             BITMAP                  "res\\ToolbarTrue.bmp"
+
+IDB_STATUS              BITMAP                  "res\\StatusIcon.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_VIEW_OPTIONS
+    SEPARATOR
+    BUTTON      ID__COPY_ALL
+    BUTTON      ID__CLEAR_SCREEN
+    SEPARATOR
+    BUTTON      ID_VIEW_LOGOUTPUT
+    BUTTON      ID_VIEW_SHOW_OUTPUT
+    SEPARATOR
+    BUTTON      ID_SAVE_PASTE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Send File",                  ID_FILE_SENDFILE, INACTIVE
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Copy Selected",               ID__COPY_SELECTED
+        MENUITEM "Copy All",                    ID__COPY_ALL
+        MENUITEM "Paste",                       ID__PASTE
+        MENUITEM "Clear History",               ID__CLEAR_HISTORY
+        MENUITEM "Clear Screen",                ID__CLEAR_SCREEN
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Log Output",                  ID_VIEW_LOGOUTPUT
+        MENUITEM "Show Output",                 ID_VIEW_SHOW_OUTPUT
+        MENUITEM "Log Binary",                  ID_FILE_LOGRAWDATA
+        MENUITEM "Show Binary",                 ID_VIEW_SHOW_BINARY
+        MENUITEM "Options",                     ID_VIEW_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SuperTerm...",         ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_MENU MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Copy Selected",               ID__COPY_SELECTED
+        MENUITEM "Copy All",                    ID__COPY_ALL
+        MENUITEM "Paste",                       ID__PASTE
+        MENUITEM "Clear History",               ID__CLEAR_HISTORY
+        MENUITEM "Clear Screen",                ID__CLEAR_SCREEN
+    END
+END
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "OnSavePaste",                 ID_SAVE_PASTE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SuperTerm"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SuperTerm Version 1.0",IDC_STATIC,63,22,81,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,178,18,50,16,WS_GROUP
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 307, 321
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,222,293,50,14
+    GROUPBOX        "Serial Port Setting",IDC_STATIC,7,7,186,56,WS_GROUP
+    COMBOBOX        IDC_BAUDRATE,69,39,57,77,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "Baud    Rate:",IDC_STATIC,16,41,51,8
+    COMBOBOX        IDC_COMPORT,69,21,57,111,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "COM    Port:",IDC_STATIC,15,23,50,8
+    GROUPBOX        "Pipe Setting",IDC_STATIC,7,71,186,39
+    EDITTEXT        IDC_EDIT1,67,85,69,13,ES_AUTOHSCROLL
+    LTEXT           "Named   Pipe:",IDC_STATIC,15,87,46,8
+    GROUPBOX        "Screen Setting",IDC_STATIC,203,7,96,72
+    GROUPBOX        "Logging Format",IDC_STATIC,204,83,95,43
+    CONTROL         "MS-DOS",IDC_LOG_DOS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,215,97,46,8
+    CONTROL         "UNIX",IDC_LOG_UNIX,"Button",BS_AUTORADIOBUTTON,215,110,40,8
+    LTEXT           "Tab Size:",IDC_STATIC,213,60,34,8
+    EDITTEXT        IDC_EDIT2,261,59,27,13,ES_AUTOHSCROLL
+    LTEXT           "Row Size:",IDC_STATIC,213,42,34,8
+    LTEXT           "Column Size:",IDC_STATIC,213,26,44,8
+    EDITTEXT        IDC_EDIT3,261,41,27,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,261,24,27,13,ES_AUTOHSCROLL
+    GROUPBOX        "Telnet Setting",IDC_STATIC,7,219,185,52
+    LTEXT           "IP Address:",IDC_STATIC,15,236,47,8
+    EDITTEXT        IDC_EDIT6,68,253,26,13,ES_AUTOHSCROLL
+    LTEXT           "Telnet Port:",IDC_STATIC,15,254,46,8
+    CONTROL         "Enable",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,146,40,35,12
+    CONTROL         "Enable",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,146,87,37,10
+    CONTROL         "Enable",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,146,254,37,10
+    CONTROL         "Enable",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,146,172,37,10
+    GROUPBOX        "Server Setting",IDC_STATIC,7,281,185,34
+    EDITTEXT        IDC_EDIT7,67,298,27,13,ES_AUTOHSCROLL
+    LTEXT           "Server Port:",IDC_STATIC,15,299,46,8
+    CONTROL         "Enable",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,146,297,37,10
+    GROUPBOX        "Misc",IDC_STATIC,203,231,93,50
+    GROUPBOX        "Usb Bulk Setting",IDC_STATIC,7,117,185,92
+    COMBOBOX        IDC_USBDEVICE,59,131,126,111,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "USB Device:",IDC_STATIC,15,133,40,8
+    COMBOBOX        IDC_USB_EPIN,59,150,54,111,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "IN EP:",IDC_STATIC,15,152,32,8
+    COMBOBOX        IDC_USB_EPOUT,59,169,53,111,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "OUT EP:",IDC_STATIC,15,171,30,8
+    GROUPBOX        "Terminal Type",IDC_STATIC,204,132,95,43
+    CONTROL         "ANSI",IDC_TERM_ANSI,"Button",BS_AUTORADIOBUTTON | WS_GROUP,215,146,46,8
+    CONTROL         "UTF8",IDC_TERM_UTF8,"Button",BS_AUTORADIOBUTTON,215,159,40,8
+    COMBOBOX        IDC_USB_INTERFACE,157,151,27,111,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "INTF:",IDC_STATIC,129,153,23,8
+    EDITTEXT        IDC_UART_NAME,145,21,40,13,ES_AUTOHSCROLL
+    CONTROL         "DTR Enable",IDC_DTR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,215,247,53,10
+    CONTROL         "RTS Enable",IDC_RTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,215,263,52,10
+    EDITTEXT        IDC_PID,59,189,125,13,ES_AUTOHSCROLL
+    LTEXT           "PID Filter:",IDC_STATIC,15,192,33,8
+    COMBOBOX        IDC_IP_ADDRESS,68,235,111,77,CBS_DROPDOWN | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    GROUPBOX        "Key Mapping",IDC_STATIC,203,182,95,43
+    CONTROL         "BackSpace(Ctrl+H)",IDC_TERM_KEY_BS1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,215,197,75,8
+    CONTROL         "BackSpace(Ctrl+?)",IDC_TERM_KEY_BS2,"Button",BS_AUTORADIOBUTTON,215,210,75,8
+END
+
+IDD_SENDFILE DIALOGEX 0, 0, 317, 51
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Send File"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Send",IDOK,262,28,48,14
+    COMBOBOX        IDC_COMBO1,40,28,94,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "File:",IDC_STATIC,7,11,16,10
+    PUSHBUTTON      "Browse",IDC_BUTTON1,261,10,49,14
+    LTEXT           "Protocol:",IDC_STATIC,7,31,30,8
+    COMBOBOX        IDC_COMBO_FILE,40,11,212,54,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Line Interval:",IDC_STATIC,151,31,44,8
+    EDITTEXT        IDC_INTERVAL,200,29,51,13,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileDescription", "SuperTerm"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "SuperTerm.exe"
+            VALUE "LegalCopyright", "All rights reserved."
+            VALUE "OriginalFilename", "SuperTerm.exe"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 314
+        HORZGUIDE, 14
+    END
+
+    IDD_SENDFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONFIG DLGINIT
+BEGIN
+    IDC_BAUDRATE, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_BAUDRATE, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_BAUDRATE, 0x403, 4, 0
+0x3039, 0x0030, 
+    IDC_BAUDRATE, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_BAUDRATE, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_BAUDRATE, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_BAUDRATE, 0x403, 6, 0
+0x3637, 0x3038, 0x0030, 
+    IDC_BAUDRATE, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 7, 0
+0x3332, 0x3430, 0x3034, "\000" 
+    IDC_BAUDRATE, 0x403, 7, 0
+0x3634, 0x3830, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 7, 0
+0x3239, 0x3631, 0x3030, "\000" 
+    IDC_BAUDRATE, 0x403, 8, 0
+0x3531, 0x3030, 0x3030, 0x0030, 
+    IDC_BAUDRATE, 0x403, 8, 0
+0x3032, 0x3030, 0x3030, 0x0030, 
+    IDC_BAUDRATE, 0x403, 8, 0
+0x3033, 0x3030, 0x3030, 0x0030, 
+    0
+END
+
+IDD_SENDFILE DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 4, 0
+0x4548, 0x0058, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_CONFIG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "SuperTerm"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "SuperTerm"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE
+BEGIN
+    ID__CLEAR_SCREEN        "Clear Screen\nClear Screen"
+    ID__COPY_ALL            "Copy All\nCopy All"
+    ID_VIEW_OPTIONS         "Config Options\nOptions"
+    ID_VIEW_LOGOUTPUT       "Log Text Output\nLog Output"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_SHOW_OUTPUT     "Open Log File\nOpen Log"
+END
+
+STRINGTABLE
+BEGIN
+    ID_PASTE_SAVE           "Save or Paste String"
+    ID_SAVE_PASTE           "Copy or Paste String\nCopy or Paste String"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\SuperTerm.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -4,9 +4,9 @@
 #include   "DeviceIo.h"
 
 const	unsigned char IAC		= 255;
-const	unsigned char DO		= 253;
+const	unsigned char DO		= 253; // 0xfd
 const	unsigned char DONT		= 254;
-const	unsigned char WILL		= 251;
+const	unsigned char WILL		= 251; // 0xfb
 const	unsigned char WONT		= 252;
 const	unsigned char SB		= 250;
 const	unsigned char SE		= 240;
@@ -34,6 +34,7 @@ private :
 	int				HandleOptions	(int  data);
 	CString			ArrangeReply	(CString strOption);
 	void			RespondToOptions();
+	void            HandleMessage(BYTE* rxBuffer, int nRead);
 	static UINT		CallBackThread	(LPVOID pParam );
 	void			CleanUp ();
 

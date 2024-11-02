@@ -73,6 +73,7 @@ protected:
 public:
 //	afx_msg void OnViewOptions();
 	afx_msg void OnClose();
+	virtual void OnUpdateFrameTitle(BOOL bAddToTitle);
 };
 
 

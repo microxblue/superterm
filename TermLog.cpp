@@ -1054,7 +1054,7 @@ BOOL CTermLog::TryConnection()
 	bValid = m_pDevice->IoIsValid();
 	if (!bValid)  {
 		CString  csOpen;
-		if (m_pDevice->m_Type == CDeviceIo::EnumTypeSerialPort)
+		if (m_pDevice->m_Type == CDeviceIo::EnumTypeSerialPort) 
 			csOpen.Format(_T("Device=%s;BaudRate=%d;Dtr=%d;Rts=%d"), m_TermCfg.ComPort, m_TermCfg.BaudRate, m_TermCfg.EnableDtr, m_TermCfg.EnableRts);
 		else if (m_pDevice->m_Type == CDeviceIo::EnumTypeNamedPipe)
 			csOpen.Format(_T("PipeName=%s"),m_TermCfg.PipeName);
@@ -1072,6 +1072,11 @@ BOOL CTermLog::TryConnection()
 	DWORD Data;
 	if (bValid) {
 		Data = m_pDevice->m_Type;
+		if (m_pDevice->m_Type == CDeviceIo::EnumTypeSerialPort) {
+			CString csTitle (L"SuperTerm - ");			
+			csTitle.Append(m_TermCfg.ComPort);
+			::SendMessageW(AfxGetMainWnd()->GetSafeHwnd(), WM_SETTEXT, 0, (LPARAM)(LPCTSTR)csTitle);			
+		}
 	} else {
 		Data = 0;
 	}
@@ -1081,7 +1086,7 @@ BOOL CTermLog::TryConnection()
 
 #define  COMMAND_LINE_DELAY   1
 
-void CTermLog::OnTimer(UINT nTimerID)
+void CTermLog::OnTimer(UINT_PTR nTimerID)
 {
 	// TODO: Add your message handler code here and/or call default
 	if (nTimerID == SEND_FILE_TIMER_TID) {

@@ -551,7 +551,7 @@ void CConfigDlg::UpdateInterfaces()
 	for (int nIndex = m_UsbEpIn.GetCount() - 1; nIndex >= 0; nIndex--) 
 	  m_UsbInterface.DeleteString(nIndex);	
 
-	int idx = m_UsbDevice.GetItemData(m_UsbDevice.GetCurSel());
+	int idx = (int)m_UsbDevice.GetItemData(m_UsbDevice.GetCurSel());
 	if (idx >= m_UsbDeviceList.GetSize() || idx < 0) 
 		return;
 	

@@ -246,8 +246,7 @@ public:
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
-	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
-	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);	
 	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
 	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
 	afx_msg LRESULT OnUserMessage(WPARAM wParam, LPARAM lParam);
@@ -255,6 +254,7 @@ public:
 	afx_msg void OnKillFocus(CWnd* pNewWnd);
 //	afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
 	afx_msg void OnSetFocus(CWnd* pOldWnd);
+	
 public:
 	afx_msg void OnContextMenu(CWnd* /*pWnd*/, CPoint /*point*/);
 	afx_msg void OnCopyAll();
@@ -265,4 +265,7 @@ public:
 public:
 	afx_msg void OnClearHistory();
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
+
+protected:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
